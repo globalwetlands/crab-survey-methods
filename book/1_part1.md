@@ -16,3 +16,10 @@ This book outlines the methods used by the Global Wetlands Project to monitor cr
 ## Purpose
 
 ## Motivation
+
+Crabs play key roles in coastal and marine ecosystems, yet methods for studying them vary widely across regions. This project aims to:
+
+1. Document field protocols for crab surveys using images, computer vision and AI
+2. Provide standardized data formats for global comparison
+3. Share open-source tools for preprocessing and analysis
+4. Build a global community of practice around crab ecology
