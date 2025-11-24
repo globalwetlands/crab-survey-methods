@@ -26,3 +26,9 @@ PDF: `jupyter book build --pdf`
 Run `myst init --gh-pages` for creating GitHub action.
 
 # Contributing
+
+## Creating tag and release
+
+We used annotated tag which specifies the tag and message as follow:
+
+`git tag -a v0.0.1 -m "Release version 0.0.1"`
