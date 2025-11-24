@@ -49,7 +49,7 @@ jobs:
           echo "::set-output name=changes::$(cat changelog.txt | jq -Rsa .)"
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: 18.x
 
