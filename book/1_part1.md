@@ -2,9 +2,9 @@
 title: "Part 1: Motivation and Overview"
 date: 2025-11-24
 authors:
-    - name: César Herrera
-      affiliation:
-        - id: glow
+  - name: César Herrera
+    affiliation:
+      - id: glow
 ---
 
 +++ {"part": "abstract"}
@@ -13,9 +13,6 @@ This book outlines the methods used by the Global Wetlands Project to monitor cr
 
 # The Global Wetlands Project
 
-
 ## Purpose
 
-
 ## Motivation
-

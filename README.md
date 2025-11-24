@@ -1,7 +1,8 @@
 # crab-survey-methods
-A shared repository of survey methods, data preprocessing routines, and analysis tools for crab ecology. 
 
-Please click on the "Wiki" page for information on GLOW Crab Monitoring. 
+A shared repository of survey methods, data preprocessing routines, and analysis tools for crab ecology.
+
+Please click on the "Wiki" page for information on GLOW Crab Monitoring.
 
 # Development
 
@@ -20,3 +21,5 @@ PDF: `jupyter book build --pdf`
 ### Setting GitHub pages
 
 Run `myst init --gh-pages` for creating GitHub action.
+
+# Contributing

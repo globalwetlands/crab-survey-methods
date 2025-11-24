@@ -4,7 +4,14 @@ project:
   id: b51c73e8-9477-4e5c-ba71-a4f10623f1e4
   title: "Crab Monitoring Pipeline: Field Methods, Hardware, and Data Management"
   description: Open Protocols for Global Crab Monitoring in Mangrove Habitats
-  keywords: [crab monitoring, mangrove habitats, open protocols, global wetlands, open source]
+  keywords:
+    [
+      crab monitoring,
+      mangrove habitats,
+      open protocols,
+      global wetlands,
+      open source,
+    ]
   authors:
     - name: César Herrera
       affiliation:
