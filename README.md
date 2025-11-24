@@ -1,7 +1,8 @@
 # crab-survey-methods
 
-[![Publish Book](https://github.com/globalwetlands/crab-survey-methods/actions/workflows/deploy.yml/badge.svg?branch=main)](https://github.com/globalwetlands/crab-survey-methods/actions/workflows/deploy.yml)
-[![Automatic Release](https://github.com/globalwetlands/crab-survey-methods/actions/workflows/release-pdf.yml/badge.svg?event=push)](https://github.com/globalwetlands/crab-survey-methods/actions/workflows/release-pdf.yml)
+[![Deploy](https://github.com/globalwetlands/crab-survey-methods/actions/workflows/deploy.yml/badge.svg?branch=main)](https://github.com/globalwetlands/crab-survey-methods/actions/workflows/deploy.yml)
+[![Automatic Release](https://github.com/globalwetlands/crab-survey-methods/actions/workflows/release.yml/badge.svg?event=push)](https://github.com/globalwetlands/crab-survey-methods/actions/workflows/release.yml)
+[![Build PDF](https://github.com/globalwetlands/crab-survey-methods/actions/workflows/release-pdf.yml/badge.svg?event=push)](https://github.com/globalwetlands/crab-survey-methods/actions/workflows/release-pdf.yml)
 
 A shared repository of survey methods, data preprocessing routines, and analysis tools for crab ecology.
 

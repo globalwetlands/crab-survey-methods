@@ -1,0 +1,58 @@
+name: Automatic Release
+
+on:
+  push:
+    tags:
+      - "v*" # Trigger on tags starting with 'v'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Create GitHub Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Determine if pre-release
+        id: pre_release_check
+        run: |
+          if [[ "${GITHUB_REF_NAME}" == *-* ]]; then
+            echo "Pre-release detected: ${GITHUB_REF_NAME}"
+            echo "::set-output name=is_prerelease::--prerelease"
+          else
+            echo "Release detected: ${GITHUB_REF_NAME}"
+            echo "::set-output name=is_prerelease::"
+          fi
+
+      - name: Generate changelog
+        id: changelog
+        run: |
+          PREV_TAG=$(git describe --tags --abbrev=0 HEAD^ 2>/dev/null || echo "None")
+
+          if [ "$PREV_TAG" != "None" ]; then
+            echo "Generating changelog between $PREV_TAG and $GITHUB_REF"
+            git log "$PREV_TAG"..HEAD --oneline > changelog.txt
+          else
+            echo "First release, no previous changelog." > changelog.txt
+          fi
+
+          cat changelog.txt
+          echo "::set-output name=changes::$(cat changelog.txt | jq -Rsa .)"
+
+      - name: Create Release
+        run: |
+          gh release create ${{ github.ref_name }} \
+          --title "Release ${{ github.ref_name }}" \
+          --notes ${{ steps.changelog.outputs.changes }} \
+          ${{ steps.pre_release_check.outputs.is_prerelease }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
