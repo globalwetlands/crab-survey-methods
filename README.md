@@ -2,7 +2,6 @@
 
 [![Deploy](https://github.com/globalwetlands/crab-survey-methods/actions/workflows/deploy.yml/badge.svg?branch=main)](https://github.com/globalwetlands/crab-survey-methods/actions/workflows/deploy.yml)
 [![Automatic Release](https://github.com/globalwetlands/crab-survey-methods/actions/workflows/release.yml/badge.svg?event=push)](https://github.com/globalwetlands/crab-survey-methods/actions/workflows/release.yml)
-[![Build PDF](https://github.com/globalwetlands/crab-survey-methods/actions/workflows/release-pdf.yml/badge.svg?event=push)](https://github.com/globalwetlands/crab-survey-methods/actions/workflows/release-pdf.yml)
 
 A shared repository of survey methods, data preprocessing routines, and analysis tools for crab ecology.
 
@@ -32,4 +31,7 @@ Run `myst init --gh-pages` for creating GitHub action.
 
 We used annotated tag which specifies the tag and message as follow:
 
-`git tag -a v0.0.1 -m "Release version 0.0.1"`
+```bash
+git tag -a v0.0.1 -m "Release version 0.0.1"
+git push origin v0.0.1
+```
