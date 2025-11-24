@@ -56,8 +56,27 @@ jobs:
       - name: Install MyST
         run: npm install -g mystmd
 
+      - name: Install LaTeX dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y texlive-xetex texlive-fonts-recommended texlive-plain-generic latexmk
+
       - name: Build PDF
         run: myst build --pdf
+
+      - name: List build directory
+        run: |
+          echo "Checking build directory..."
+          ls -R _build/ || echo "No _build directory found"
+          find . -name "*.pdf" -type f || echo "No PDF files found"
+
+      - name: Verify PDF exists
+        run: |
+          if [ ! -f "_build/pdf/crab-monitoring-pipeline.pdf" ]; then
+            echo "ERROR: PDF file not found at _build/pdf/crab-monitoring-pipeline.pdf"
+            exit 1
+          fi
+          echo "PDF file found successfully"
 
       - name: Create Release
         run: |
