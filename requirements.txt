@@ -1,0 +1,5 @@
+jupyter-book
+jupyterlab
+sphinx-pythia-theme
+pre-commit
+mystmd

@@ -1,0 +1,14 @@
+version: 1
+project:
+  toc:
+    - file: book/0_index.md
+    - title: "Part 1: Motivation and Overview"
+      file: book/1_part1.md
+      children:
+        - file: book/2_chapter1.md
+        - file: book/3_chapter2.md
+    - title: "Part 2: Field Methods"
+      file: book/4_part2.md    
+      children:
+        - file: book/5_chapter3.md
+        - file: book/6_chapter4.md

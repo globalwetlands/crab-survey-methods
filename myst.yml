@@ -1,0 +1,37 @@
+# See docs at: https://mystmd.org/guide/frontmatter
+version: 1
+project:
+  id: b51c73e8-9477-4e5c-ba71-a4f10623f1e4
+  title: "Crab Monitoring Pipeline: Field Methods, Hardware, and Data Management"
+  description: Open Protocols for Global Crab Monitoring in Mangrove Habitats
+  keywords: [crab monitoring, mangrove habitats, open protocols, global wetlands, open source]
+  authors:
+    - name: César Herrera
+      affiliation:
+        - id: glow
+          institution: The Global Wetlands Project, Griffith University
+          department: Australian Rivers Institute, and School of Environment and Science
+      orcid: 0000-0003-0307-6724
+      email: c.herreraacosta@griffith.edu.au
+      roles:
+        - Conceptualization
+    - name: Diego Gloria
+      affiliation: glow
+  github: https://github.com/globalwetlands/crab-survey-methods
+  exports:
+    - format: pdf
+      template: arxiv_two_column
+      output: _build/pdf/crab-monitoring-pipeline.pdf
+    - format: html
+      template: book-theme
+      output: _build/html/crab-monitoring-pipeline.html
+    - format: epub
+      template: book-theme
+      output: _build/epub/crab-monitoring-pipeline.epub
+extends:
+  - toc.yml
+site:
+  template: book-theme
+  # options:
+  #   favicon: favicon.ico
+  #   logo: site_logo.png
