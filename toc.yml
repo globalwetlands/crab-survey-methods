@@ -16,3 +16,4 @@ project:
       file: book/7_part3.md
       children:
         - file: book/8_chapter5.md
+        - file: book/9_chapter6.md
