@@ -7,8 +7,12 @@ project:
       children:
         - file: book/2_chapter1.md
         - file: book/3_chapter2.md
-    - title: "Part 2: Field Methods"
+    - title: "Part 2: Experimental design"
       file: book/4_part2.md
       children:
         - file: book/5_chapter3.md
         - file: book/6_chapter4.md
+    - title: "Part 3: Field Methods"
+      file: book/7_part3.md
+      children:
+        - file: book/8_chapter5.md
