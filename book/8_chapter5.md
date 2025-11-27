@@ -1,4 +1,14 @@
-# Chapter 3: Hardware
+---
+title: "Hardwarre"
+date: 2025-11-27
+authors:
+  - name: Diego Gloria
+    affiliation:
+      - id: glow
+  - name: César Herrera
+    affiliation:
+      - id: glow
+---
 
 ## Cameras
 
