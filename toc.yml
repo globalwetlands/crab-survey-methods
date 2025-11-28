@@ -12,7 +12,7 @@ project:
       children:
         - file: book/5_chapter3.md
         - file: book/6_chapter4.md
-    - title: "Part 3: Field Methods"
+    - title: "Part 3: Hardware and Materials"
       file: book/7_part3.md
       children:
         - file: book/8_chapter5.md

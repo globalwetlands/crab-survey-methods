@@ -1,3 +1,7 @@
 ---
-title: Table of content
+title: Table of Contents
 ---
+
+```{tableofcontents}
+
+```
