@@ -85,6 +85,8 @@ jobs:
             texlive-latex-extra \
             texlive-plain-generic \
             texlive-science \
+            texlive-bibtex-extra \
+            biber \
             latexmk
           echo "LaTeX installation complete"
           latexmk --version
