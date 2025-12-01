@@ -84,6 +84,7 @@ jobs:
             texlive-fonts-extra \
             texlive-latex-extra \
             texlive-plain-generic \
+            texlive-science \
             latexmk
           echo "LaTeX installation complete"
           latexmk --version
