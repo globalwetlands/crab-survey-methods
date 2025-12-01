@@ -16,6 +16,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Fetch all history for all tags and branches
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -27,26 +29,47 @@ jobs:
         run: |
           if [[ "${GITHUB_REF_NAME}" == *-* ]]; then
             echo "Pre-release detected: ${GITHUB_REF_NAME}"
-            echo "::set-output name=is_prerelease::--prerelease"
+            echo "is_prerelease=--prerelease" >> $GITHUB_OUTPUT
           else
             echo "Release detected: ${GITHUB_REF_NAME}"
-            echo "::set-output name=is_prerelease::"
+            echo "is_prerelease=" >> $GITHUB_OUTPUT
           fi
 
       - name: Generate changelog
         id: changelog
         run: |
-          PREV_TAG=$(git describe --tags --abbrev=0 HEAD^ 2>/dev/null || echo "None")
+          # Get list of all tags sorted by version
+          CURRENT_TAG="${GITHUB_REF_NAME}"
+          echo "Current tag: $CURRENT_TAG"
 
-          if [ "$PREV_TAG" != "None" ]; then
-            echo "Generating changelog between $PREV_TAG and $GITHUB_REF"
-            git log "$PREV_TAG"..HEAD --oneline > changelog.txt
+          # Get previous tag
+          PREV_TAG=$(git tag --sort=-version:refname | grep -A1 "^${CURRENT_TAG}$" | tail -n1)
+
+          if [ "$PREV_TAG" == "$CURRENT_TAG" ] || [ -z "$PREV_TAG" ]; then
+            echo "This is the first release"
+            echo "## Changes" > changelog.txt
+            echo "" >> changelog.txt
+            echo "Initial release of the Crab Monitoring Pipeline documentation." >> changelog.txt
+            echo "" >> changelog.txt
+            git log --oneline --pretty=format:"- %s (%h)" >> changelog.txt
           else
-            echo "First release, no previous changelog." > changelog.txt
+            echo "Generating changelog between $PREV_TAG and $CURRENT_TAG"
+            echo "## Changes since $PREV_TAG" > changelog.txt
+            echo "" >> changelog.txt
+            git log "${PREV_TAG}..${CURRENT_TAG}" --oneline --pretty=format:"- %s (%h)" >> changelog.txt
           fi
 
+          echo ""
+          echo "=== Generated Changelog ==="
           cat changelog.txt
-          echo "::set-output name=changes::$(cat changelog.txt | jq -Rsa .)"
+          echo "==========================="
+
+          # Use proper multiline output format
+          {
+            echo 'changes<<EOF'
+            cat changelog.txt
+            echo 'EOF'
+          } >> $GITHUB_OUTPUT
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -58,17 +81,49 @@ jobs:
 
       - name: Install LaTeX dependencies
         run: |
+          echo "Installing LaTeX packages..."
           sudo apt-get update
-          sudo apt-get install -y texlive-xetex texlive-fonts-recommended texlive-plain-generic latexmk
+          sudo apt-get install -y \
+            texlive-xetex \
+            texlive-fonts-recommended \
+            texlive-fonts-extra \
+            texlive-latex-extra \
+            texlive-plain-generic \
+            latexmk
+          echo "LaTeX installation complete"
+          latexmk --version
+
+      - name: Install Typst
+        run: |
+          echo "Installing Typst..."
+          wget -q https://github.com/typst/typst/releases/download/v0.11.0/typst-x86_64-unknown-linux-musl.tar.xz
+          tar -xf typst-x86_64-unknown-linux-musl.tar.xz
+          sudo mv typst-x86_64-unknown-linux-musl/typst /usr/local/bin/
+          rm -rf typst-x86_64-unknown-linux-musl typst-x86_64-unknown-linux-musl.tar.xz
+          echo "Typst installation complete"
+          typst --version
 
       - name: Build PDF
-        run: myst build --pdf
+        run: |
+          echo "Starting PDF build..."
+          myst build --pdf || {
+            echo "ERROR: MyST build failed!"
+            echo "Checking for log files..."
+            find _build -name "*.log" -type f -exec echo "=== {} ===" \; -exec cat {} \;
+            exit 1
+          }
+          echo "PDF build completed successfully"
 
       - name: List build directory
         run: |
-          echo "Checking build directory..."
-          ls -R _build/ || echo "No _build directory found"
-          find . -name "*.pdf" -type f || echo "No PDF files found"
+          echo "Checking build directory structure..."
+          ls -lah _build/ || echo "No _build directory found"
+          echo ""
+          echo "Full directory tree:"
+          find _build -type f -ls || echo "No files in _build"
+          echo ""
+          echo "Looking for PDF files:"
+          find . -name "*.pdf" -type f
 
       - name: Verify PDF exists
         run: |
@@ -81,9 +136,9 @@ jobs:
       - name: Create Release
         run: |
           gh release create ${{ github.ref_name }} \
-          --title "Release ${{ github.ref_name }}" \
-          --notes ${{ steps.changelog.outputs.changes }} \
-          ${{ steps.pre_release_check.outputs.is_prerelease }} \
-          _build/pdf/crab-monitoring-pipeline.pdf
+            --title "Release ${{ github.ref_name }}" \
+            --notes-file changelog.txt \
+            ${{ steps.pre_release_check.outputs.is_prerelease }} \
+            _build/pdf/crab-monitoring-pipeline.pdf
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
