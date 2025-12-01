@@ -52,24 +52,19 @@ jobs:
             echo "Initial release of the Crab Monitoring Pipeline documentation." >> changelog.txt
             echo "" >> changelog.txt
             git log --oneline --pretty=format:"- %s (%h)" >> changelog.txt
+            echo "" >> changelog.txt
           else
             echo "Generating changelog between $PREV_TAG and $CURRENT_TAG"
             echo "## Changes since $PREV_TAG" > changelog.txt
             echo "" >> changelog.txt
             git log "${PREV_TAG}..${CURRENT_TAG}" --oneline --pretty=format:"- %s (%h)" >> changelog.txt
+            echo "" >> changelog.txt
           fi
 
           echo ""
           echo "=== Generated Changelog ==="
           cat changelog.txt
           echo "==========================="
-
-          # Use proper multiline output format
-          {
-            echo 'changes<<EOF'
-            cat changelog.txt
-            echo 'EOF'
-          } >> $GITHUB_OUTPUT
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
