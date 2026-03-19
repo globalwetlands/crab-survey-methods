@@ -21,7 +21,21 @@ Content and code for reproducing this book can be found in the book's [GitHub re
 
 # The Global Wetlands Project
 
+The Global Wetlands Project (GLOW) is an initiative dedicated to the conservation and restoration of coastal ecosystems, specifically seagrass meadows, mangrove forests, and saltmarshes. Originally based out of Griffith University, the project aims to bridge the gap between scientific research and practical conservation action to combat biodiversity loss and climate change.
+
 ## Purpose
+
+The primary pillars of the project are:
+
+1. Scientific Research: They focus on elevating the understanding of critical issues facing coastal wetlands, such as the impacts of sea-level rise and the effectiveness of restoration efforts.
+
+2. Open-Access Tools: A significant part of GLOW is developing online platforms to make scientific data accessible. Notable tools include FishID, which uses deep learning and computer vision to automate the analysis of underwater video footage.
+
+3. Strategic Partnerships: The project works closely with organizations like the World Wildlife Fund (WWF) and is an active member of the Global Mangrove Alliance (GMA) to help prioritize conservation resources globally.
+
+4. Capacity Building: They actively support new research through PhD opportunities and funding for fieldwork and collaborative travel.
+
+Overall, the project serves as a hub for data-driven coastal management, providing the evidence and technology needed for organizations to protect and restore high-value marine habitats.
 
 ## Motivation
 
