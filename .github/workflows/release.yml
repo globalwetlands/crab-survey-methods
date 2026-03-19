@@ -80,6 +80,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y \
             texlive-xetex \
+            texlive-luatex \
             texlive-fonts-recommended \
             texlive-fonts-extra \
             texlive-latex-extra \
@@ -87,9 +88,14 @@ jobs:
             texlive-science \
             texlive-bibtex-extra \
             biber \
-            latexmk
+            latexmk \
+            fontconfig \
+            fonts-lmodern \
+            fonts-freefont-otf \
+            cm-super
           echo "LaTeX installation complete"
           latexmk --version
+          fc-cache -fv || true
 
       - name: Install Typst
         run: |
@@ -103,13 +109,28 @@ jobs:
 
       - name: Build PDF
         run: |
+          set -euo pipefail
           echo "Starting PDF build..."
           myst build --pdf || {
-            echo "ERROR: MyST build failed!"
-            echo "Checking for log files..."
-            find _build -name "*.log" -type f -exec echo "=== {} ===" \; -exec cat {} \;
+            echo "ERROR: myst build --pdf exited non-zero"
             exit 1
           }
+          # myst sometimes exits 0 even when LaTeX did not produce a PDF; always verify.
+          if [ ! -f "_build/pdf/crab-monitoring-pipeline.pdf" ]; then
+            echo "ERROR: PDF was not written to _build/pdf/crab-monitoring-pipeline.pdf"
+            echo "=== myst.build.json ==="
+            cat _build/logs/myst.build.json 2>/dev/null || echo "(no myst.build.json)"
+            echo ""
+            echo "=== LaTeX log (last 200 lines, if present) ==="
+            find _build/temp -name 'crab-monitoring-pipeline.log' -type f -print | while read -r f; do
+              echo "--- tail of $f ---"
+              tail -n 200 "$f"
+            done
+            echo ""
+            echo "=== Lines with LaTeX errors (!) ==="
+            find _build/temp -name 'crab-monitoring-pipeline.log' -type f -exec grep -n '^!' {} + 2>/dev/null || true
+            exit 1
+          fi
           echo "PDF build completed successfully"
 
       - name: List build directory
