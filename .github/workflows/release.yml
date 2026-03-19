@@ -131,12 +131,30 @@ jobs:
           fi
           echo "PDF file found successfully"
 
+      - name: Build DOCX (Word)
+        run: |
+          echo "Building Microsoft Word export..."
+          myst build book/13_word_export.md --docx || {
+            echo "ERROR: MyST DOCX build failed!"
+            exit 1
+          }
+          echo "DOCX build completed successfully"
+
+      - name: Verify DOCX exists
+        run: |
+          if [ ! -f "_build/docx/crab-monitoring-pipeline.docx" ]; then
+            echo "ERROR: DOCX file not found at _build/docx/crab-monitoring-pipeline.docx"
+            exit 1
+          fi
+          echo "DOCX file found successfully"
+
       - name: Create Release
         run: |
           gh release create ${{ github.ref_name }} \
             --title "Release ${{ github.ref_name }}" \
             --notes-file changelog.txt \
             ${{ steps.pre_release_check.outputs.is_prerelease }} \
-            _build/pdf/crab-monitoring-pipeline.pdf
+            _build/pdf/crab-monitoring-pipeline.pdf \
+            _build/docx/crab-monitoring-pipeline.docx
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

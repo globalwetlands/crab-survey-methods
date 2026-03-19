@@ -21,6 +21,20 @@ List of all possible templates can be listed with `jupyter book templates list`.
 
 PDF: `jupyter book build --pdf`
 
+### Microsoft Word (DOCX)
+
+MyST cannot use the same multi-chapter project export for DOCX as for PDF (`multiple articles are only supported for 'tex', 'typst', and 'pdf' exports`). This repo uses a dedicated aggregator, `book/13_word_export.md`, which `include`s each chapter. The DOCX renderer does not support the `{tableofcontents}` directive, so the landing-page prose lives in `book/includes/about-this-book.md` (included from `book/0_index.md` for the site and from `13_word_export.md` for Word).
+
+From the repository root (with [MyST](https://mystmd.org/) available, e.g. `npm install -g mystmd` or `npx mystmd`):
+
+```bash
+npx mystmd build book/13_word_export.md --docx
+```
+
+Output: `_build/docx/crab-monitoring-pipeline.docx`.
+
+You may see **duplicate identifier** warnings for figures (e.g. `pvc-rig`) because the same chapter is both a site page and inlined into the Word export; the build should still complete. If a future MyST version removes that, warnings may disappear.
+
 ### Setting GitHub pages
 
 Run `myst init --gh-pages` for creating GitHub action.
