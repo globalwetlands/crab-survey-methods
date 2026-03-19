@@ -24,12 +24,18 @@ project:
         - Conceptualization
     - name: Diego Gloria
       affiliation: glow
+    - name: Rod Connolly
+      affiliation: glow
     - name: Nelson Miranda
       affiliation:
         - id: glow-sa
           institution: The Global Wetlands Project, University of the Western Cape
           department: Department of Biodiversity and Conservation Biology
     - name: Anusha Rajkaran
+      affiliation: glow-sa
+    - name: Akshata Mehta
+      affiliation: glow-sa
+    - name: Tashreeqah Nero
       affiliation: glow-sa
   github: https://github.com/globalwetlands/crab-survey-methods
   acknowledgements: We thank the field teams and local communities who contributed to the development of these protocols.
