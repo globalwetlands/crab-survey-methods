@@ -1,5 +1,5 @@
 ---
-title: "Data management"
+title: "Data management practices"
 date: 2026-03-10
 authors:
   - name: Nelson Miranda
@@ -134,7 +134,7 @@ Quality Assurance (QA) and Quality Control (QC) are not just about catching erro
 
 ### How to Propose a Protocol Update
 
-If you’ve modified this checklist to solve a local problem:
+If you have modified this checklist to solve a local problem:
 
 1. **Highlight the change** in your team’s shared directory.
 2. **Add a brief note** explaining why (e.g., _"Added a check for lens salt-spray in high-wind sites"_).

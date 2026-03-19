@@ -7,7 +7,7 @@ authors:
       - id: glow
 ---
 
-# The Hierarchical Structure of the Survey
+## The Hierarchical Structure of the Survey
 
 GLOW is an organization comprised of various research institutions, community groups, and NGOs, hereafter collectively referred to as local teams. These teams vary in size and capacity, ranging from small local groups to large regional hubs. Regardless of their size or resources, it is imperative that all local teams follow a common hierarchical experimental design. While local logistical constraints (e.g., finite equipment or staffing) will dictate the volume of data collected, the structure of that collection must remain uniform.
 
@@ -23,7 +23,7 @@ Our experimental design employs three nested spatial scales, arranged from small
 
 - Locations: A Location is a broad geographic region within a local team’s area of reach that contains suitable Sites. Distinct Locations should be separated by at least 50 km to ensure regional independence.
 
-# Experimental Treatments
+### Experimental Treatments
 
 The design includes two treatments: one orthogonal (independent) and one nested.
 
@@ -31,13 +31,13 @@ The design includes two treatments: one orthogonal (independent) and one nested.
 
 - Status of Site (Nested): This treatment defines the condition of the Site: Natural, Degraded, or Restored. Ideally, each Location should include paired comparisons of these levels (e.g., Natural vs. Restored, or Natural vs. Degraded).
 
-# Surveys Over Time
+## Surveys Over Time
 
 There are three critical temporal aspects to the survey: when to survey, how often (frequency), and for how long (duration).
 
 We recognize that not all local teams can survey with the same intensity. Furthermore, because teams will join the program at different times, there is no expectation that global surveys will commence synchronously. Decisions regarding timing and intensity must be informed by local knowledge, environmental context, and capacity.
 
-## When to Survey?
+### When to Survey?
 
 Surveys can commence as soon as the local team has acquired equipment, conducted a pilot study, and verified that camera rigs are operating correctly. However, surveys should be avoided during times of high risk to equipment or personnel, such as cyclone seasons or periods of extreme flooding.
 
@@ -45,4 +45,10 @@ Frequency and Duration Frequency (how often a survey is repeated) and Duration (
 
 The final decision on sampling intensity is conditioned by equipment availability, staffing, and security risks (see Table). In areas where the risk of equipment theft or loss is low, local teams should prioritize deployments that last for several consecutive weeks.
 
-Table : Recommended survey durations based on risk and resources. This table outlines the recommended deployment strategies based on the security of the site and the resources available to the local tea.
+Table 1: Recommended survey durations based on risk and resources. This table outlines the recommended deployment strategies based on the security of the site and the resources available to the local team.
+
+| Risk and Resources                                  | Recommended Duration  | Deployment Strategy                                                              |
+| :-------------------------------------------------- | :-------------------- | :------------------------------------------------------------------------------- |
+| **High Risk** (Equipment cannot be left unattended) | 1 to 3 hours          | Short deployments; personnel must remain with the camera rigs.                   |
+| **Moderate Risk** (Low risk for short periods)      | 1 to 3 days           | Intermediate deployments; cameras can be left briefly if retrieval is frequent.  |
+| **Low Risk** (Secure site)                          | Several days to weeks | Long-term deployments; duration is limited only by SD card and battery capacity. |

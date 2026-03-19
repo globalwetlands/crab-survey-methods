@@ -19,11 +19,11 @@ This work was supported by an anonymous grant to the Global Wetlands Project.
 Content and code for reproducing this book can be found in the book's [GitHub repository](https://github.com/globalwetlands/crab-survey-methods)
 +++
 
-# The Global Wetlands Project
+## The Global Wetlands Project
 
 The Global Wetlands Project (GLOW) is an initiative dedicated to the conservation and restoration of coastal ecosystems, specifically seagrass meadows, mangrove forests, and saltmarshes. Originally based out of Griffith University, the project aims to bridge the gap between scientific research and practical conservation action to combat biodiversity loss and climate change.
 
-## Purpose
+### Purpose
 
 The primary pillars of the project are:
 
@@ -37,7 +37,7 @@ The primary pillars of the project are:
 
 Overall, the project serves as a hub for data-driven coastal management, providing the evidence and technology needed for organizations to protect and restore high-value marine habitats.
 
-## Motivation
+### Motivation
 
 Crabs play key roles in coastal and marine ecosystems, yet methods for studying them vary widely across regions. This project aims to:
 
