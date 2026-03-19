@@ -16,25 +16,6 @@ authors:
 5. Sampling quadrat (50cm x 50cm) with markings every 10 centimetres on each side.
 6. Fieldwork Datasheet and pen / pencil
 
-# Deployment Procedures
-
-1. Verify that the camera is fully charged and the SD card is formatted.
-2. Locate your sampling location in one of the two microhabitats. Take a GPS waypoint and record the waypoint number.
-3. Place down the camera monitoring unit and start the timelapse recording.
-4. If deploying with the quadrat, place down the quadrat below the camera monitoring unit so that it is visible. Leave the quadrat for 5 minutes.
-5. While waiting for the 5 minutes, fill out the fieldwork datasheet. If deploying underneath the canopy, take a photo of the canopy directly above the camera monitoring unit.
-6. After 5 minutes, retrieve the quadrat and exit the site, leaving only the camera monitoring unit.
-
-# Important Deployment Notes
-
-1. Ensure that the camera settings are correct prior to deployment (see section on recommended trail camera settings).
-2. Deploy in an area that has signs of crab activity such as burrows, bioturbation, etc.
-3. Do not place the monitoring unit above thick vegetation, overgrown areas, or thick roots.
-4. Ensure that the monitoring unit is placed on a flat and level surface in one of the two microhabitats.
-5. The camera must NOT be submerged at any point during the high tide.
-6. Ensure that the spot you have selected has sufficient lighting for the camera. For trail cameras, you can check this by using the live image. This will appear in black & white if lighting is insufficient - in this case, avoid that spot.
-7. Obtain an equal number of deployments (samples) for each of the two microhabitats (canopy gap AND underneath the tree canopy).
-
 # Minimum Requirements for Cameras
 
 General Requirements:
@@ -47,11 +28,11 @@ General Requirements:
 Timelapse Capabilities:
 
 1. Minimum photo quality of 8 megapixels (approximately a resolution of 3840 x 2160 pixels); higher resolutions are even better.
-2. Capable of taking photos at intervals ranging from every 5 seconds to 5 minutes. We suggest setting the timelapse interval to take a photo every 2 minutes.
+2. Capable of taking photos at intervals ranging from every 5 seconds to 5 minutes. We suggest setting the timelapse interval to take a photo every 1-30 seconds for short deployments and every 30-120 seconds for long deployments, conditioned to SD card size and battery capacity.
 
 Video Capabilities\*:
 
-1. Minimum resolution of 1920 x 1060 pixels.
+1. Minimum resolution of 1920 x 1080 pixels.
 2. '\* Videos can be used when deployments will last around 1 hour at a time. However, this means that repeat visits and video samples are necessary to achieve monitoring objectives.
 
 # Recommended Trail Camera Settings
@@ -60,7 +41,7 @@ Exact options may vary per camera model. Please try to set your camera to settin
 
 1. Capture Mode: Photo
 2. Trigger Mode: Time Lapse
-3. Timelapse Interval: 00:02:00 (1 photo every 2 minutes)
+3. Timelapse Interval: 00:00:30 (1 photo every 30 seconds)
 4. Loop Recording: Off
 5. Fill Light Intensity: Auto
 6. Monitoring Period: Off
