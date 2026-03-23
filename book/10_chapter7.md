@@ -36,7 +36,8 @@ The following information must be recorded for every fieldtrip to provide the ne
 
 ### Sample (Point) level metadata: ensuring data tracebility
 
-While Site level metadata covers the broadly "Who", "Where", "When" and "How" **Sample (Point) level metadata** captures the precise "When" and "How" for every individual camera deployed (i.e. Point). In a global program, we face a significant technical risk: multiple teams using identical camera models will generate identical filenames (e.g., `GOPR0001.MP4`). This challenge also occurs within local teams as often each local team will have several identical camera units. Without strict metadata, these files become impossible to distinguish once they reach our central servers.
+While Site level metadata covers the broadly "Who", "Where", "When" and "How", **Sample (Point) level metadata** captures the precise "When" and "How" for every individual camera deployed (i.e. Point). 
+In a global program, we face a significant technical risk: multiple teams using identical camera models will generate identical filenames (e.g., `GOPR0001.MP4`). This challenge also occurs within local teams as often each local team will have several identical camera units. Without strict metadata, these files become impossible to distinguish once they reach our central servers.
 
 To prevent data "collisions" and ensure every crab sighting can be traced back to a specific physical location and hardware unit, all equipment must be physically labeled and cross-referenced in the [Fieldwork Datasheet](https://drive.google.com/file/d/1HZ78T7LJk61ojOWKv43ql4tXYxbOqX-V/view?usp=drive_link). This information is then transferred to the digital [Master Data Spreadsheet](link to be added) once you have returned from the field.
 
