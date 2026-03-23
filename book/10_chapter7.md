@@ -23,6 +23,8 @@ Because of the global scale of our project, every sample collected must be accom
 
 Properly documenting metadata ensures **reproducibility** and **data integrity**. For instance, knowing the exact equipment settings or the specific roles of the team allows future researchers to understand exactly how a result was captured, ensuring that our global monitoring of mangrove crabs remains a robust, long-term dataset.
 
+All the important metadata should be documented in the field using the [fieldwork datasheet linked here](https://drive.google.com/file/d/1HZ78T7LJk61ojOWKv43ql4tXYxbOqX-V/view?usp=drive_link). The contents can then be transferred to the Master Data Spreadsheet once you have returned from the field. Further information on these contents and metadata collected is found below. 
+
 ### Site level metadata: documenting fieldtrips
 
 The following information must be recorded for every fieldtrip to provide the necessary context for analysis:
@@ -36,7 +38,7 @@ The following information must be recorded for every fieldtrip to provide the ne
 
 While Site level metadata covers the broadly "Who", "Where", "When" and "How" **Sample (Point) level metadata** captures the precise "When" and "How" for every individual camera deployed (i.e. Point). In a global program, we face a significant technical risk: multiple teams using identical camera models will generate identical filenames (e.g., `GOPR0001.MP4`). This challenge also occurs within local teams as often each local team will have several identical camera units. Without strict metadata, these files become impossible to distinguish once they reach our central servers.
 
-To prevent data "collisions" and ensure every crab sighting can be traced back to a specific physical location and hardware unit, all equipment must be physically labeled and cross-referenced in the [Master Data Spreadsheet](link to be added).
+To prevent data "collisions" and ensure every crab sighting can be traced back to a specific physical location and hardware unit, all equipment must be physically labeled and cross-referenced in the [Fieldwork Datasheet](https://drive.google.com/file/d/1HZ78T7LJk61ojOWKv43ql4tXYxbOqX-V/view?usp=drive_link). This information is then transferred to the digital [Master Data Spreadsheet](link to be added) once you have returned from the field.
 
 Below we suggest mandatory Sample (Point) fields. Every camera deployment must be logged as a unique entry in the master file using these mandatory fields:
 
@@ -59,7 +61,7 @@ The field team will require the following materials and equipment. These should 
 3. GPS
 4. A second handheld camera, e.g. phone camera is sufficient
 5. Reference quadrat (50cm x 50cm) with markings every 10 centimetres on each side.
-6. Fieldwork datasheet or notebook, and pen / pencil
+6. [Fieldwork datasheet](https://drive.google.com/file/d/1HZ78T7LJk61ojOWKv43ql4tXYxbOqX-V/view?usp=drive_link) or notebook, and pen / pencil
 7. Microfibre cloth for wiping and cleaning cameras
 
 Follow the procedure below for starting sampling:
