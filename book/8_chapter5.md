@@ -1,5 +1,5 @@
 ---
-title: "Hardwarre"
+title: "Hardware"
 date: 2025-11-27
 authors:
   - name: Diego Gloria
