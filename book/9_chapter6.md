@@ -14,7 +14,7 @@ authors:
 3. GPS
 4. Camera (phone camera is sufficient)
 5. Sampling quadrat (50cm x 50cm) with markings every 10 centimetres on each side.
-6. Fieldwork Datasheet and pen / pencil
+6. [Fieldwork Datasheet](https://drive.google.com/file/d/1HZ78T7LJk61ojOWKv43ql4tXYxbOqX-V/view?usp=drive_link) and pen / pencil
 
 # Minimum Requirements for Cameras
 
@@ -58,7 +58,7 @@ To ensure consistency in monitoring, we have specifications for each camera moni
 1. Camera is at least 50cm above the ground
 2. A variety of materials can be used, as long as the monitoring structure is stable and strong enough to be left in the field for up to 3 months.
 3. The camera must be facing directly downwards.
-4. The field of view seen by the camera 20cm x 20cm and 100cm x 100cm. It does not have to be a perfect square, as long as you know the exact area.
+4. The field of view seen by the camera is 50cm x 50cm or more. 
 5. A quadrat with markings every 10 centimetres on each side should be placed down in front of the camera for two timelapse cycles (i.e if the camera takes photos every 2 minutes, the quadrat should be left for at least 4 minutes). After this time, the quadrat can be removed. This is to aid in crab sizing and density estimates.
 
 Further information can be found in the "Camera Monitoring Unit Specifications" section in the previous chapter.
